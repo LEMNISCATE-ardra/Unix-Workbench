@@ -3,8 +3,8 @@ function game
 {
   echo "Please enter your guess(no of files): "
   read $input
-  echo $input
-  file = $(pwd | ls | wc -l)
+  
+  file = $(ls -1| wc -l)
 
   while [[ $input -ne $file ]]
   do
@@ -12,9 +12,11 @@ function game
   	if [[ $input -lt $file ]]
   	then
       		echo "Wrong!!,Try a bigger no"
+		
     	elif [[ $input -gt $file ]]
     	then
       		echo "Wrong!!,Try a smaller no"
+		
     	elif [[ $input -eq $file ]]
     	then 
 		echo "Correct answer, Thank you for participating" 
